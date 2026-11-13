@@ -1,0 +1,23 @@
+[package]
+name = "ubuntu-wall"
+version = "0.2.0"
+edition = "2021"
+description = "Ubuntu Multi-Monitor Wallpaper Manager built with Dioxus"
+
+[dependencies]
+dioxus = { version = "0.6", features = ["desktop"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp"] }
+dirs = "6"
+rfd = "0.15"
+tokio = { version = "1", features = ["rt", "time"] }
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+panic = "abort"

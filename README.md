@@ -1,0 +1,38 @@
+# Ubuntu 多屏壁纸管家 (Ubuntu Multi-Monitor Wallpaper Manager)
+
+基于 **Dioxus 0.6 + Rust** 打造的 Ubuntu 纯原生独立多显示屏壁纸管理工具，采用 **Material Design 3 (M3) + 瑞士平面主义** 现代设计语言。
+
+---
+
+## 🌟 技术重构优势 (Why Dioxus?)
+
+- 🦀 **全栈纯 Rust 原生开发**：彻底剔除 Node.js、pnpm、Vite、TypeScript 等前端工具链负担，单二进制程序，启动速度提升数倍。
+- ⚡ **零 IPC 序列化损耗**：UI 状态与底层图像合成引擎在同一个 Rust 进程空间内协同工作，没有 JSON 序列化通信与跨进程开销。
+- 🛡️ **免疫本地网络代理**：完全摆脱本地 HTTP 开发服务器模式，不占用端口，彻底免疫环境变量中网络代理劫持引发的 502/卡死问题。
+- 🖥️ **双屏物理拓扑自适应**：精准识别各屏幕接口（DP-1、DP-2）、型号名称、物理分辨率与空间原点坐标。
+- 🖼️ **原生 Spanned 巨幅画布合成**：采用 Rust 高性能图像编解码与裁剪引擎，一键生成覆盖所有显示器的巨幅壁纸，并通过 GNOME `picture-options = 'spanned'` 原生机制生效，完美适配 Ubuntu Wayland 与 X11 会话。
+- 🎨 **M3 + 瑞士平面主义美学**：
+  - 双屏空间比例等比映射与实时壁纸预览
+  - 胶囊药丸交互控件与大圆角卡片
+  - 智能缩略图磁盘缓存（~/.cache/ubuntu-wall/thumbnails/）
+  - 深浅色模式自适应切换与持久化存储
+
+---
+
+## 🚀 启动与使用
+
+在项目根目录下直接使用 Cargo 启动：
+
+```bash
+# 进入工作区
+cd /home/knd/Desktop/workspace/ubuntu-wall
+
+# 直接运行桌面应用
+cargo run
+```
+
+### 生产环境发布包构建
+```bash
+cargo build --release
+```
+编译产物位于 `target/release/ubuntu-wall`，单文件即可直接运行。
