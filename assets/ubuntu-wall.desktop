@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Ubuntu 多屏壁纸管家
+Name[en]=Ubuntu Multi-Monitor Wallpaper Manager
+GenericName=壁纸管理器
+GenericName[en]=Wallpaper Manager
+Comment=支持为不同显示屏分别设置独立壁纸的 Ubuntu 原生工具
+Comment[en]=Set individual wallpapers for multiple monitors on Ubuntu
+Exec=ubuntu-wall
+Icon=ubuntu-wall
+Terminal=false
+Type=Application
+Categories=Settings;DesktopSettings;Utility;
+Keywords=wallpaper;monitor;display;screen;gnome;multimonitor;
+StartupNotify=true
+StartupWMClass=ubuntu-wall
