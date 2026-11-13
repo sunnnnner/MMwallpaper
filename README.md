@@ -25,7 +25,7 @@
 
 ```bash
 # 进入工作区
-cd /home/knd/Desktop/workspace/ubuntu-wall
+cd /xx/ubuntu-wall
 
 # 直接运行桌面应用
 cargo run
